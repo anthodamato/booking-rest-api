@@ -1,4 +1,6 @@
-package booking.api.model;
+package booking.api.dto;
+
+import booking.api.model.VaccineBooking;
 
 import java.time.LocalDateTime;
 

@@ -5,4 +5,4 @@
 **/dependency-reduced-pom.xml
 **/build/
 **/derby.log
-
+**/.idea/

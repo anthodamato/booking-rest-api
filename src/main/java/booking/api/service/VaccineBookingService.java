@@ -2,14 +2,14 @@ package booking.api.service;
 
 import java.time.LocalDateTime;
 
-import javax.transaction.Transactional;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import booking.api.model.VaccineBooking;
-import booking.api.model.VaccineBookingDto;
+import booking.api.dto.VaccineBookingDto;
 import booking.api.repository.VaccineBookingRepository;
+
+import jakarta.transaction.Transactional;
 
 @Service
 public class VaccineBookingService {

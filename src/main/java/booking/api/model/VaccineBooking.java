@@ -2,7 +2,7 @@ package booking.api.model;
 
 import java.time.LocalDateTime;
 
-import javax.persistence.Entity;
+import jakarta.persistence.Entity;
 
 @Entity
 public class VaccineBooking extends BasicEntity {

@@ -1,4 +1,4 @@
-package booking.api.model;
+package booking.api.controller;
 
 public enum ResponseType {
 	SUCCESS("success"), ERROR("error");
