@@ -1,5 +1,6 @@
-package booking.api.model;
+package booking.api.controller;
 
+import booking.api.dto.VaccineBookingDto;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonInclude.Include;
 

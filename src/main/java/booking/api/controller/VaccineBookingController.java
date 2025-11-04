@@ -11,14 +11,13 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
-import booking.api.model.RestResponse;
 import booking.api.model.VaccineBooking;
-import booking.api.model.VaccineBookingDto;
+import booking.api.dto.VaccineBookingDto;
 import booking.api.service.VaccineBookingService;
 
 @RestController
 public class VaccineBookingController {
-	private Logger LOG = LoggerFactory.getLogger(VaccineBookingController.class);
+	private Logger log = LoggerFactory.getLogger(VaccineBookingController.class);
 	@Autowired
 	private VaccineBookingService vaccineBookingService;
 
@@ -27,7 +26,7 @@ public class VaccineBookingController {
 		VaccineBooking vaccineBooking = vaccineBookingService.save(vaccineBookingDto);
 		RestResponse restResponse = new RestResponse();
 		restResponse.setVaccineBookingDto(VaccineBookingDto.of(vaccineBooking));
-		LOG.info("Vaccine Booking Created id={}", vaccineBooking.getId());
+		log.info("Vaccine Booking Created id={}", vaccineBooking.getId());
 		return new ResponseEntity<RestResponse>(restResponse, HttpStatus.CREATED);
 	}
 }

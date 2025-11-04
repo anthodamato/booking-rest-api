@@ -8,9 +8,6 @@ import org.springframework.web.bind.MethodArgumentNotValidException;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 
-import booking.api.model.ResponseType;
-import booking.api.model.RestResponse;
-
 @ControllerAdvice
 public class RestExceptionHandler {
 	@SuppressWarnings("unused")

@@ -1,5 +1,0 @@
-# pull Apache Derby image
-docker pull az82/docker-derby
-
-# run Apache Derby container
-docker run -d -p 1527:1527 --name derby -t az82/docker-derby
