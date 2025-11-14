@@ -1,5 +1,5 @@
-FROM openjdk:11-jdk-slim
-RUN useradd -U spring
+FROM amazoncorretto:21-alpine3.22
+RUN addgroup -S spring && adduser -S spring -G spring
 USER spring:spring
 ARG JAR_FILE=target/*.jar
 COPY ${JAR_FILE} app.jar

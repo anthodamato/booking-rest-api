@@ -24,27 +24,27 @@ import booking.api.dto.VaccineBookingDto;
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
 @ContextConfiguration(classes = Application.class)
 public class VaccineBookingControllerTest {
-	@LocalServerPort
-	private int port;
+    @LocalServerPort
+    private int port;
 
-	@Autowired
-	private TestRestTemplate testRestTemplate;
+    @Autowired
+    private TestRestTemplate testRestTemplate;
 
-	@Test
-	public void givenVB_WhenPost_ThenCreated() throws MalformedURLException, RestClientException, URISyntaxException {
-		URL url = new URL("http://localhost:" + port + "/book");
-		VaccineBookingDto vaccineBookingDto = new VaccineBookingDto();
-		vaccineBookingDto.setDateOf(LocalDateTime.now());
-		vaccineBookingDto.setOrdinalNumber(1);
-		vaccineBookingDto.setAddress("London Excel");
+    @Test
+    public void createBookingVaccine() throws MalformedURLException, RestClientException, URISyntaxException {
+        URL url = new URL("http://localhost:" + port + "/book");
+        VaccineBookingDto vaccineBookingDto = new VaccineBookingDto();
+        vaccineBookingDto.setDateOf(LocalDateTime.now());
+        vaccineBookingDto.setOrdinalNumber(1);
+        vaccineBookingDto.setAddress("London Excel");
 
-		ResponseEntity<RestResponse> response = testRestTemplate.postForEntity(url.toURI(), vaccineBookingDto,
-				RestResponse.class);
-		assertEquals(HttpStatus.CREATED.value(), response.getStatusCode().value());
-		RestResponse restResponse = response.getBody();
-		assertNotNull(restResponse);
-		VaccineBookingDto vbDto = restResponse.getVaccineBookingDto();
-		assertEquals(1, vbDto.getOrdinalNumber());
-		assertEquals("London Excel", vbDto.getAddress());
-	}
+        ResponseEntity<RestResponse> response = testRestTemplate.postForEntity(url.toURI(), vaccineBookingDto,
+                RestResponse.class);
+        assertEquals(HttpStatus.CREATED.value(), response.getStatusCode().value());
+        RestResponse restResponse = response.getBody();
+        assertNotNull(restResponse);
+        VaccineBookingDto vbDto = restResponse.getVaccineBookingDto();
+        assertEquals(1, vbDto.getOrdinalNumber());
+        assertEquals("London Excel", vbDto.getAddress());
+    }
 }
