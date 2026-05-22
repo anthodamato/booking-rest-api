@@ -1,0 +1,8 @@
+spring:
+  datasource:
+    url: jdbc:derby:memory:vac_booking;create=true
+    driver-class-name: org.apache.derby.jdbc.EmbeddedDriver
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: update

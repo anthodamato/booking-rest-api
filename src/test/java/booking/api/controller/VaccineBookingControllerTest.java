@@ -15,6 +15,7 @@ import org.springframework.boot.test.web.client.TestRestTemplate;
 import org.springframework.boot.test.web.server.LocalServerPort;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.test.context.ActiveProfiles;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.web.client.RestClientException;
 
@@ -22,7 +23,7 @@ import booking.api.Application;
 import booking.api.dto.VaccineBookingDto;
 
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
-@ContextConfiguration(classes = Application.class)
+@ActiveProfiles(value = "test")
 public class VaccineBookingControllerTest {
     @LocalServerPort
     private int port;

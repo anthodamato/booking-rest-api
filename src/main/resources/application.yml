@@ -1,0 +1,9 @@
+## 172.18.0.2: database instance ip on Docker
+spring:
+  datasource:
+    url: jdbc:derby://172.18.0.2/vac_booking;create=true
+    driver-class-name: org.apache.derby.jdbc.ClientDriver
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: update
